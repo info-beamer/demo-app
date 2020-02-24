@@ -1,5 +1,5 @@
 const CACHE_NAME = 'hosted-app-v1'
-const APP_ROOT = '/test-app/'
+const APP_ROOT = '/'
 
 async function cacheResources(version) {
   const cache = await caches.open(CACHE_NAME)
