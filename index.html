@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>info-beamer mobile app demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.png" type="image/png"/>
+    <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+  </head>
+  <body>
+    <div id='app'><router-view></router-view></div>
+    <script>
+      window.CONFIG = {
+        client_id: "reiqueiZiyeiTuejai4i",
+        redirect_uri: location.origin + location.pathname,
+        authorization_endpoint: "https://info-beamer.com/oauth/authorize",
+        token_endpoint: "https://info-beamer.com/oauth/token",
+        requested_scopes: "info device:read",
+        api_root: "https://info-beamer.com/api/v1/",
+        app_root: location.pathname,
+        app_version: 1, // +new Date(),
+      }
+    </script>
+    <script src="vue.js"></script>
+    <script src="vuex.js"></script>
+    <script src="vue-router.js"></script>
+    <script src="vue-resource.js"></script>
+    <script>
+      const script = document.createElement('script')
+      script.src = 'app.js?v=' + window.CONFIG.app_version
+      document.head.appendChild(script)
+
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = 'app.css?v=' + window.CONFIG.app_version
+      document.head.appendChild(link)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "short_name": "info-beamer",
+  "name": "info-beamer hosted",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/test-app/",
+  "background_color": "#ffa500",
+  "display": "standalone",
+  "scope": "/test-app/",
+  "theme_color": "#ffa500"
+}
