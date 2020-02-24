@@ -10,12 +10,17 @@
     <div id='app'><router-view></router-view></div>
     <script>
       window.CONFIG = {
-        client_id: "reiqueiZiyeiTuejai4i",
+        // OAuth config
+        client_id: "afdc88968e002e243336c89a4764806a",
         redirect_uri: location.origin + location.pathname,
         authorization_endpoint: "https://info-beamer.com/oauth/authorize",
         token_endpoint: "https://info-beamer.com/oauth/token",
         requested_scopes: "info device:read",
+
+        // Hosted backend config
         api_root: "https://info-beamer.com/api/v1/",
+
+        // App config
         app_root: location.pathname,
         app_version: 1, // +new Date(),
       }
