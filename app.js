@@ -583,7 +583,7 @@ const Index = Vue.component('index-view', {
         <img src='icon-192.png'>
         <br/><br/>
         <button class='btn btn-default btn-lg' @click='login'>
-          Log in to your account
+          Log into your account
         </button>
         <div class='version'>version {{version}}</div>
       </div>
