@@ -2,8 +2,10 @@
   <head>
     <title>info-beamer mobile app demo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
+    <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png">
     <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
@@ -22,7 +24,7 @@
 
         // App config
         app_root: location.pathname,
-        app_version: 3, // +new Date(),
+        app_version: 4, // +new Date(),
       }
     </script>
     <script src="vue.js"></script>
