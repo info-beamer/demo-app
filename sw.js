@@ -9,9 +9,17 @@ async function cacheResources(version) {
     APP_ROOT + 'sw.js?v=' + version,
     APP_ROOT + 'vue.js',
     APP_ROOT + 'vuex.js',
-    APP_ROOT + 'vue-router.js',
+
     APP_ROOT + 'vue-resource.js',
-    APP_ROOT + 'bootstrap.min.css',
+    APP_ROOT + 'framework7.bundle.min.js',
+    APP_ROOT + 'framework7-vue.bundle.min.js',
+
+    APP_ROOT + 'material-icons.css',
+    APP_ROOT + 'framework7-icons.css',
+    APP_ROOT + 'framework7.bundle.min.css',
+    APP_ROOT + 'fonts/Framework7Icons-Regular.woff2',
+    APP_ROOT + 'fonts/MaterialIcons-Regular.woff2',
+
     APP_ROOT + 'favicon.png',
     APP_ROOT + 'icon-192.png',
     APP_ROOT + 'icon-512.png',
@@ -31,7 +39,7 @@ async function cachedResource(request) {
 }
 
 async function handleRequest(request) {
-  let response = null // await cachedResource(request)
+  let response = await cachedResource(request)
   if (!response) {
     response = await fetch(request)
   }

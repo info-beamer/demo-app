@@ -1,143 +1,20 @@
-body {
-  padding-top: 65px;
-  padding-bottom: 50px;
-  touch-action: manipulation;
+img.logo {
+  margin: 20px;
 }
-.fullscreen {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  background-color: orange;
-}
-.fullscreen .inner {
-  display: block;
-  width: 100%;
-} 
-.fullscreen .inner.index {
-  font-size: 200%;
-}
-
-.version {
-  color: #fff;
-  font-size: 10px;
-  margin-top: 10px;
-}
-
-.right {
-  float: right;
-}
-
-.busy {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background-color: orange;
-}
-
-.nav-top {
-  position: fixed;
-  top: 5px;
-  left: 0;
-  right: 0;
-  background-color: #eee;
-  cursor: pointer;
-  /* box-shadow: 0px 3px 2px rgba(1,1,1,0.5); */
-}
-.nav-top.row {
-  margin: 0;
-}
-.nav-top div {
-  padding: 15px 8px;
-  text-align: center;
-  font-size: 10pt;
-  background-color: orange;
-  color: black;
-}
-.nav-top div.dashboard {
-  background-image: url(favicon.png);
-  background-size: 30px;
-  background-repeat: no-repeat;
-  background-position: center; 
-}
-.nav-top div:active {
-  background-color: gray;
-}
-.nav-top div.router-link-active {
-  background-color: white;
-  color: black;
-}
-
-.nav-bottom {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #eee;
-  cursor: pointer;
-  border-top: 1px solid #888;
-}
-.nav-bottom .row {
-  margin: 0;
-}
-.nav-bottom .item {
-  padding: 15px 8px;
-  text-align: center;
-  font-size: 10pt;
-  background-color: orange;
-  color: black;
-}
-.nav-bottom .item.selected {
-  background-color: white;
-}
-.nav-bottom .item:not(:first-child) {
-  border-left: 1px solid white;
-}
-
-.dashboard-item {
-  margin-bottom: 40px;
-}
-.out-of-funds {
-  color: red;
-  font-weight: bold;
-  font-size: 70%;
-}
-
-.device-box {
-  border: 1px solid #888;
-  margin-bottom: 10px;
-  padding: 10px;
-}
-.device-box.online {
-  background-color: #daefda;
-}
-.device-box.unknown {
-  background-color: #e2e2e2;
-}
-.device-box.disconnected {
-  background-color: #fde2d5;
-}
-.device-box.offline {
-  background-color: #fdd5d5;
-}
-.device-box .model {
-  float: right;
-}
-
-.device-detail h3 {
-  margin-top: 0;
-}
-.device-detail .snap {
+.snapshot {
   height: 240px;
   width: 100%;
   border: 0px solid white;
   background-repeat: no-repeat;
   background-position: center; 
   background-size: contain;
+  margin: 20px 0;
+}
+
+.tabs .page-content {
+  padding: 0;
+}
+
+.index-page {
+  --f7-page-bg-color: orange;
 }

@@ -5,21 +5,25 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="favicon.png" type="image/png"/>
-    <link href="bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="framework7-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="material-icons.css" rel="stylesheet" type="text/css"/>
+    <link href="framework7.bundle.min.css" rel="stylesheet" type="text/css"/>
   </head>
   <body>
-    <div id='app'><router-view></router-view></div>
+    <div id='app'><app-view></app-view></div>
     <script>
+      let service = "https://info-beamer.com"
+      // service = "https://localhost"
       window.CONFIG = {
         // OAuth config
         client_id: "afdc88968e002e243336c89a4764806a",
         redirect_uri: location.origin + location.pathname,
-        authorization_endpoint: "https://info-beamer.com/oauth/authorize",
-        token_endpoint: "https://info-beamer.com/oauth/token",
+        authorization_endpoint: service + "/oauth/authorize",
+        token_endpoint: service + "/oauth/token",
         requested_scopes: "info device:read",
 
         // Hosted backend config
-        api_root: "https://info-beamer.com/api/v1/",
+        api_root: service + "/api/v1/",
 
         // App config
         app_root: location.pathname,
@@ -28,8 +32,9 @@
     </script>
     <script src="vue.js"></script>
     <script src="vuex.js"></script>
-    <script src="vue-router.js"></script>
     <script src="vue-resource.js"></script>
+    <script src="framework7.bundle.min.js"></script>
+    <script src="framework7-vue.bundle.min.js"></script>
     <script>
       const script = document.createElement('script')
       script.src = 'app.js?v=' + window.CONFIG.app_version
