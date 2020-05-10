@@ -427,7 +427,7 @@ const DeviceDetail = Vue.component('devices-detail', {
           <f7-list-item header='Status' :title='status'/>
           <f7-list-item header='Display resolution' :title='run.resolution' v-if='run.resolution'/>
           <f7-list-item header='Assigned Setup' :title='device.setup ? device.setup.name : "No setup assigned"'/>
-          <f7-list-item header='Hardware model' :title='hw.model'/>
+          <f7-list-item header='Hardware model' v-if='hw' :title='hw.model'/>
           <f7-list-item header='Device serial' :title='device.serial'/>
           <f7-list-item header='OS release' :title='run.tag' v-if='run.tag'/>
           <f7-list-item header='Last reboot' :title='restarted_ago | format_ago' v-if='restarted_ago'/>
