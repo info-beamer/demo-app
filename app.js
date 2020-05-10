@@ -509,6 +509,14 @@ const DeviceList = Vue.component('device-list', {
             :title='device.description'
           />
         </template>
+        <template slot='after-list'>
+          <br/>
+          <f7-button large @click="update">
+            <f7-icon f7="arrow_2_circlepath_circle" v-if='!$store.getters.is_busy'/>
+            <f7-icon f7="arrow_2_circlepath_circle_fill" v-else/>
+            Refresh
+          </f7-button>
+        </template>
       </f7-list>
     </tab-slot>
   `,
@@ -640,11 +648,16 @@ const DeviceList = Vue.component('device-list', {
       return this.mode_settings.groups(devices)
     },
   },
+  methods: {
+    update() {
+      this.$store.dispatch('update_devices')
+    },
+  }
 })
 
 const DeviceListSelect = Vue.component('device-list-select', {
   template: `
-    <tab-page title='Devices' @refresh='update'>
+    <tab-page title='Devices'>
       <template slot='tabbar'>
         <f7-link tab-link href="/devices/" route-tab-id="all">All</f7-link>
         <f7-link tab-link href="/devices/online" route-tab-id="online">Online</f7-link>
