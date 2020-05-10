@@ -382,8 +382,7 @@ const Dashboard = Vue.component('dashboard-view', {
     </main-page>
   `,
   created() {
-  },
-  created() {
+    // console.log('dashboard update')
     this.update()
   },
   computed: {
@@ -493,21 +492,21 @@ const DeviceDetail = Vue.component('devices-detail', {
 const DeviceList = Vue.component('device-list', {
   template: `
     <tab-slot :title='mode_settings.title'>
-      <f7-block strong v-if='device_groups.length == 0 && !$store.getters.is_busy'>
-        <p>
-          No devices match your query
-        </p>
-      </f7-block>
       <f7-list>
         <template v-for='group in device_groups'>
-          <f7-list-item :group-title='true' :title='group.group' v-if='group.group'/>
-          <f7-list-item
-            :key='device.id' v-for='device in group.devices'
-            :badge='device.online_status'
-            :badge-color='device.online_status_color'
-            :link='"/device/" + device.id' :header='device.location'
-            :title='device.description'
-          />
+          <f7-block strong v-if='group.devices.length == 0 && !$store.getters.is_busy'>
+            No device matches your query
+          </f7-block>
+          <template v-else>
+            <f7-list-item :group-title='true' :title='group.group' v-if='group.group'/>
+            <f7-list-item
+              :key='device.id' v-for='device in group.devices'
+              :badge='device.online_status'
+              :badge-color='device.online_status_color'
+              :link='"/device/" + device.id' :header='device.location'
+              :title='device.description'
+            />
+          </template>
         </template>
         <template slot='after-list'>
           <br/>
@@ -618,7 +617,7 @@ const DeviceList = Vue.component('device-list', {
           serial: device.serial,
           name: name,
           group: group_name,
-          description: device.description,
+          description: device.description || `Device ${device.serial}`,
           location: device.location,
           is_online: device.is_online,
           is_synced: device.is_synced,
